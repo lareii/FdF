@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obastug <obastug@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 13:34:08 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/05 14:28:04 by obastug          ###   ########.fr       */
+/*   Created: 2025/01/12 22:35:08 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/01/13 02:14:01 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,13 @@
 # define PADDED_WIDTH 1800
 # define PADDED_HEIGHT 900
 
-# define ON_DESTROY 17
-
-# define ESC_KEY 65307
-
-// enum {
-// 	ON_KEYDOWN = 2,
-// 	ON_KEYUP = 3,
-// 	ON_MOUSEDOWN = 4,
-// 	ON_MOUSEUP = 5,
-// 	ON_MOUSEMOVE = 6,
-// 	ON_EXPOSE = 12,
-// 	ON_DESTROY = 17
-// };
-
 typedef struct	s_mlx
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
+	int		*bits_per_pixel;
+	int		*size_line;
+	int		*endian;
 }				t_mlx;
 
 #endif

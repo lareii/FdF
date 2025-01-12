@@ -3,55 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obastug <obastug@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 11:39:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/07 12:47:31 by obastug          ###   ########.fr       */
+/*   Created: 2025/01/12 22:28:32 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/01/13 02:14:26 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-#define BUFFER_SIZE 30
-#define COLOR_MASK 4294967295U
-#define DEFAULT_COLOR 0x00FFFFFF
+# include "window.h"
+# include <stddef.h>
 
-#include "window.h"
-#include <stddef.h>
-
+# define BUFFER_SIZE 99999
+# define COLOR_MASK 4294967295U
+# define DEFAULT_COLOR 0x00FFFFFF
 
 typedef struct	s_vars
 {
 	t_mlx			*mlx;
+
 	unsigned long	**map;
-	int				height;
-	int				map_x;
-	int				map_y;
-	int				w_coef;
-	int				s_coef;
-	int				a_coef;
-	int				d_coef;
-	double			distance;
-	int				line_count;
-	int				line_len;
-	int				anchor_x;
-	int				anchor_y;
-}	t_vars;
+	size_t			col_size;
+	size_t			row_size;
+}				t_vars;
 
-char			*read_file(char *file_name);
-int				init_win(t_mlx *mlx);
-unsigned int	ft_atoi_hex(char *str);
-unsigned long	point_to_ulong(char *point);
-unsigned long	**map_string_to_arr_2d(char *whole_file);
-size_t			ft_ptrarrlen(unsigned long	*arr);
+typedef struct	s_point
+{
+	int	x;
+	int	y;
+	int	z;
+}				t_point;
 
-unsigned long	get_color(unsigned long);
+int		init_map(t_vars *vars, char *filename);
+void	free_str_arr(char	**arr);
+void	free_ulong_arr(unsigned long **arr);
+size_t	ulong_arr_len(unsigned long	*arr);
 unsigned long	get_z(unsigned long point);
+unsigned long	get_color(unsigned long point);
+unsigned int	ft_atoi_hex(char *str);
 
-void			render_map(t_vars *vars);
-
-int				key_handler(int keycode, void *param);
-int				close_win(void *param);
-void			reset_camera(t_vars *vars);
 #endif
