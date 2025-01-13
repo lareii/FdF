@@ -6,14 +6,14 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:44:47 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/14 01:37:26 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 02:07:50 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_BONUS_H
 # define FDF_BONUS_H
 
-# include "window.h"
+# include "window_bonus.h"
 # include <stddef.h>
 
 # define BUFFER_SIZE 99999
