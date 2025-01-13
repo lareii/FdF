@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   win_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 19:39:45 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 13:53:37 by ebabaogl         ###   ########.fr       */
+/*   Created: 2025/01/13 13:41:23 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/01/13 13:55:19 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
-#include "libft.h"
+#include "window.h"
+#include "mlx.h"
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+void	destroy_win(t_mlx *mlx)
 {
-	t_vars	vars;
-
-	if (argc != 2)
-	{
-		ft_putendl_fd("Invalid arguments.\nUsage: ./fdf <map>", 2);
-		return (1);
-	}
-	if (init_map(&vars, argv[1]) == -1)
-		return (1);
-	if (init_win(&vars) == -1)
-		return (1);
-	free_ulong_arr(vars.map);
+	if (mlx->img_ptr)
+		mlx_destroy_image(mlx->mlx_ptr, mlx->img_ptr);
+	if (mlx->win_ptr)
+		mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
+	if (mlx->mlx_ptr)
+		mlx_destroy_display(mlx->mlx_ptr);
+	free(mlx->mlx_ptr);
 }

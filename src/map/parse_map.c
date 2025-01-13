@@ -1,48 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 22:47:31 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 02:14:40 by ebabaogl         ###   ########.fr       */
+/*   Created: 2025/01/13 10:18:50 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/01/13 13:54:12 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include "libft.h"
-#include <fcntl.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
 
-static char	*get_raw_map(char *filename)
+static size_t	ulong_arr_len(unsigned long	*arr)
 {
-	char	*buf;
-	char	*map;
-	int		r_bytes;
-	int		fd;
+	size_t	i;
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-		return (NULL);
-	r_bytes = 1;
-	map = NULL;
-	while (r_bytes)
-	{
-		buf = ft_calloc(1, BUFFER_SIZE);
-		if (!buf)
-			return (free(map), NULL); // norm
-		r_bytes = read(fd, buf, BUFFER_SIZE);
-		if (r_bytes == -1)
-			return (free(map), NULL); // norm
-		buf[r_bytes] = '\0';
-		map = ft_strjoin(map, buf);
-		if (!map)
-			return (NULL);
-	}
-	return (map);
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }
 
 static unsigned long	get_point(char *point)
@@ -93,7 +73,7 @@ static unsigned long	*get_map_row(char *map_row)
 	return (row);
 }
 
-static unsigned long	**split_raw_map(char *raw_map)
+unsigned long	**split_raw_map(char *raw_map)
 {
 	unsigned long	**map;
 	char			**str_map;
@@ -119,18 +99,4 @@ static unsigned long	**split_raw_map(char *raw_map)
 	map[col_size] = NULL;
 	free_str_arr(str_map);
 	return (map);
-}
-
-int	init_map(t_vars *vars, char *filename)
-{
-	char			*raw_map;
-	
-	raw_map = get_raw_map(filename);
-	if (!raw_map)
-		return (-1);
-	vars->map = split_raw_map(raw_map);
-	if (!vars->map)
-		return (-1);
-	free(raw_map);
-	return (0);
 }

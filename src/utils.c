@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:10:17 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 02:11:17 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:53:41 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,6 @@ unsigned int	ft_atoi_hex(char *str)
 		str++;
 	}
 	return (res);
-}
-
-size_t	ulong_arr_len(unsigned long	*arr)
-{
-	size_t	i;
-
-	i = 0;
-	while (arr[i])
-		i++;
-	return (i);
 }
 
 void	free_ulong_arr(unsigned long **arr)
