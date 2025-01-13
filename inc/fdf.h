@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:32 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 16:41:13 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 20:12:30 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ typedef struct s_vars
 	t_mlx			*mlx;
 
 	unsigned long	**map;
-	size_t			col_size;
-	size_t			row_size;
+	int				col_size;
+	int				row_size;
 
-	size_t			anchor_x;
-	size_t			anchor_y;
+	int				anchor_x;
+	int				anchor_y;
 	int				map_x;
 	int				map_y;
 

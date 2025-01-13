@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:15:19 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 16:17:23 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 20:21:28 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	set_camera_props(t_vars *vars)
 	else
 		vars->distance = width_distance;
 	vars->height = 5;
-	vars->zoom = 1;
-	vars->x_y_coef = 0;
-	vars->y_z_coef = 0;
+	vars->zoom = 0.7;
+	vars->x_y_coef = -0.4;
+	vars->y_z_coef = -0.9;
 	vars->z_x_coef = 0;
 	vars->map_x = 0;
 	vars->map_y = 0;

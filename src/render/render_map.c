@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:56:40 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 16:51:33 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 20:16:30 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ static void	set_lines(t_vars *vars, int x, int y, unsigned long point)
 
 void	render_map(t_vars *vars)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (vars->map[i])

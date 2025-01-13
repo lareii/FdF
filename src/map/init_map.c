@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 10:20:27 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 16:04:21 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 20:11:20 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void	init_map_props(t_vars *vars)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (vars->map[0][i] != ULONG_MAX)
