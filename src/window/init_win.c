@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 10:39:33 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 14:17:18 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:50:12 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	init_win(t_vars *vars)
 		return (-1);
 	mlx_hook(mlx.win_ptr, DestroyNotify, 0, destroy_handler, vars->mlx);
 	mlx_key_hook(mlx.win_ptr, key_handler, vars->mlx);
+	init_renderer(vars);
 	mlx_loop(mlx.mlx_ptr);
 	destroy_win(vars->mlx);
 	return (0);

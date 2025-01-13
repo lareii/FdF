@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 00:10:17 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 13:53:41 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:28:33 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-unsigned int	ft_atoi_hex(char *str)
+unsigned int	atoi_hex(char *str)
 {
 	unsigned int	res;
 	int				val;
@@ -69,4 +69,11 @@ unsigned long	get_z(unsigned long point)
 unsigned long	get_color(unsigned long point)
 {
 	return (point & COLOR_MASK);
+}
+
+int	abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
 }

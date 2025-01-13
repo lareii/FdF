@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 10:15:51 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 14:39:55 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:04:33 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ char	*get_raw_map(char *filename)
 		return (NULL);
 	if (read_file(fd, &map, &buf) == -1)
 		return (NULL);
+	close(fd);
 	return (map);
 }

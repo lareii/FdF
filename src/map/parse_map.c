@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 10:18:50 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 13:54:12 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:28:45 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static unsigned long	get_point(char *point)
 	if (!*(point_attrs + 1))
 		color = DEFAULT_COLOR;
 	else
-		color = ft_atoi_hex(point_attrs[1] + 2);
+		color = atoi_hex(point_attrs[1] + 2);
 	ret = (((unsigned long)z) << 32) | (color);
 	free_str_arr(point_attrs);
 	return (ret);

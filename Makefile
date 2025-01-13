@@ -10,9 +10,10 @@ MLX_DIR		= $(LIB_DIR)/minilibx-linux
 LIBFT		= $(LIBFT_DIR)/libft.a
 MLX			= $(MLX_DIR)/libmlx.a
 
-VPATH		= src:src/map:src/window
+VPATH		= src:src/map:src/render:src/window
 SRCS		= main.c utils.c \
 			init_map.c parse_map.c read_map.c \
+			init_renderer.c render_map.c render_utils.c transformations.c \
 			init_win.c win_hooks.c win_utils.c
 OBJS		= $(addprefix $(BUILD_DIR)/,$(SRCS:.c=.o))
 

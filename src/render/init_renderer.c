@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_renderer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 19:39:45 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 16:43:45 by ebabaogl         ###   ########.fr       */
+/*   Created: 2025/01/13 16:39:50 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/01/13 16:40:47 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int argc, char **argv)
+void	init_renderer(t_vars *vars)
 {
-	t_vars	vars;
-
-	if (argc != 2)
-		return (1);
-	if (init_map(&vars, argv[1]) == -1)
-		return (1);
-	if (init_win(&vars) == -1)
-		return (1);
-	free_ulong_arr(vars.map);
+	set_camera_props(vars);
+	render_map(vars);
 }
