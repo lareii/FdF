@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 10:39:33 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 16:50:12 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:28:58 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,17 @@ int	init_win(t_vars *vars)
 	t_mlx	mlx;
 
 	vars->mlx = &mlx;
-	mlx.img_ptr = NULL;
-	mlx.win_ptr = NULL;
 	mlx.mlx_ptr = NULL;
+	mlx.win_ptr = NULL;
+	mlx.img_ptr = NULL;
 	if (set_win_props(vars->mlx) == -1)
 		return (-1);
 	if (set_img_props(vars->mlx) == -1)
 		return (-1);
-	mlx_hook(mlx.win_ptr, DestroyNotify, 0, destroy_handler, vars->mlx);
-	mlx_key_hook(mlx.win_ptr, key_handler, vars->mlx);
+	mlx_hook(mlx.win_ptr, DestroyNotify, 0, destroy_handler, &mlx);
+	mlx_key_hook(mlx.win_ptr, key_handler, &mlx);
 	init_renderer(vars);
 	mlx_loop(mlx.mlx_ptr);
-	destroy_win(vars->mlx);
+	destroy_win(&mlx);
 	return (0);
 }

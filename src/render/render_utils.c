@@ -6,11 +6,21 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:15:19 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 20:21:28 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:33:29 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+unsigned long	get_z(unsigned long point)
+{
+	return (point >> 32);
+}
+
+unsigned long	get_color(unsigned long point)
+{
+	return (point & COLOR_MASK);
+}
 
 void	set_camera_props(t_vars *vars)
 {

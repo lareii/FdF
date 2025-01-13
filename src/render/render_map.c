@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:56:40 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 20:16:30 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:33:41 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "mlx.h"
 #include <limits.h>
 
-static void put_pixel(t_vars *vars, int x, int y, unsigned long color)
+static void	put_pixel(t_vars *vars, int x, int y, unsigned long color)
 {
 	int	i;
 
@@ -31,12 +31,12 @@ static void put_pixel(t_vars *vars, int x, int y, unsigned long color)
 	}
 }
 
-static void draw_line(t_vars *vars, t_point p1, t_point p2, unsigned long color)
+static void	draw_line(t_vars *vars, t_point p1, t_point p2, unsigned long color)
 {
-	double x0;
-	double y0;
-	int	steps;
-	int	i;
+	double	x0;
+	double	y0;
+	int		steps;
+	int		i;
 
 	x0 = p1.x;
 	y0 = p1.y;
@@ -94,4 +94,3 @@ void	render_map(t_vars *vars)
 	mlx_put_image_to_window(vars->mlx->mlx_ptr, vars->mlx->win_ptr,
 		vars->mlx->img_ptr, 0, 0);
 }
-
