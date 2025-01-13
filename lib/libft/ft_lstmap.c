@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:33:47 by ebabaogl          #+#    #+#             */
-/*   Updated: 2024/10/22 12:23:33 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2024/10/21 16:53:51 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_node;
 	void	*new_content;
 
-	if (!f || !del)
+	if (!lst || !f || !del)
 		return (NULL);
 	new_lst = NULL;
 	while (lst)

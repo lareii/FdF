@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.h                                           :+:      :+:    :+:   */
+/*   init_renderer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 22:35:08 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 14:16:54 by ebabaogl         ###   ########.fr       */
+/*   Created: 2025/01/13 16:39:50 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/01/14 00:26:49 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINDOW_H
-# define WINDOW_H
+#include "fdf.h"
 
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1080
-# define WIN_TITLE "FdF"
-
-# define PADDED_WIDTH 1800
-# define PADDED_HEIGHT 900
-
-typedef struct s_mlx
+void	init_renderer(t_vars *vars)
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	void	*img_ptr;
-	char	*data_addr;
-	int		bits_per_pixel;
-	int		size_line;
-	int		endian;
-}				t_mlx;
-
-#endif
+	set_camera_props(vars);
+	draw_background(vars);
+	render_map(vars);
+}

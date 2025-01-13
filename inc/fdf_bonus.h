@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   fdf_bonus.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 22:28:32 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/14 00:28:20 by ebabaogl         ###   ########.fr       */
+/*   Created: 2025/01/13 23:44:47 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/01/14 01:37:26 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#ifndef FDF_BONUS_H
+# define FDF_BONUS_H
 
 # include "window.h"
 # include <stddef.h>
@@ -41,6 +41,8 @@ typedef struct s_vars
 	double			x_y_coef;
 	double			y_z_coef;
 	double			z_x_coef;
+
+	int				is_animating;
 }	t_vars;
 
 typedef struct s_point
@@ -69,7 +71,8 @@ void			draw_background(t_vars *vars);
 int				init_win(t_vars *vars);
 void			destroy_win(t_mlx *mlx);
 int				destroy_handler(t_mlx *mlx);
-int				key_handler(int keycode, t_mlx *mlx);
+int				keypress_handler(int keycode, t_vars *vars);
+int				animation_loop(t_vars *vars);
 
 void			free_str_arr(char **arr);
 void			free_ulong_arr(unsigned long **arr);

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.h                                           :+:      :+:    :+:   */
+/*   win_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 22:35:08 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 14:16:54 by ebabaogl         ###   ########.fr       */
+/*   Created: 2025/01/13 12:59:08 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/01/13 13:55:17 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINDOW_H
-# define WINDOW_H
+#include "window.h"
+#include "mlx.h"
+#include <X11/keysym.h>
 
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1080
-# define WIN_TITLE "FdF"
-
-# define PADDED_WIDTH 1800
-# define PADDED_HEIGHT 900
-
-typedef struct s_mlx
+int	destroy_handler(t_mlx *mlx)
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	void	*img_ptr;
-	char	*data_addr;
-	int		bits_per_pixel;
-	int		size_line;
-	int		endian;
-}				t_mlx;
+	mlx_loop_end(mlx->mlx_ptr);
+	return (0);
+}
 
-#endif
+int	key_handler(int keycode, t_mlx *mlx)
+{
+	if (keycode == XK_Escape)
+		destroy_handler(mlx);
+	return (0);
+}

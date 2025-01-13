@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.h                                           :+:      :+:    :+:   */
+/*   window_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 22:35:08 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 14:16:54 by ebabaogl         ###   ########.fr       */
+/*   Created: 2025/01/13 23:45:11 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/01/13 23:45:27 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINDOW_H
-# define WINDOW_H
+#ifndef WINDOW_BONUS_H
+# define WINDOW_BONUS_H
 
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT 1080
