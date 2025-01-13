@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:47:59 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 23:48:08 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 01:37:30 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,10 @@ int	init_win(t_vars *vars)
 		return (-1);
 	if (set_img_props(vars->mlx) == -1)
 		return (-1);
-	mlx_hook(mlx.win_ptr, DestroyNotify, 0, destroy_handler, &mlx);
-	mlx_key_hook(mlx.win_ptr, key_handler, &mlx);
+	mlx_hook(mlx.win_ptr, DestroyNotify, 0, destroy_handler, vars->mlx);
+	mlx_hook(mlx.win_ptr, KeyPress, KeyPressMask, keypress_handler, vars);
 	init_renderer(vars);
+	mlx_loop_hook(vars->mlx->mlx_ptr, animation_loop, vars);
 	mlx_loop(mlx.mlx_ptr);
 	destroy_win(&mlx);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 22:28:32 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 20:12:30 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 00:28:20 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 # include <stddef.h>
 
 # define BUFFER_SIZE 99999
+
 # define COLOR_MASK 4294967295U
-# define DEFAULT_COLOR 0x00FFFFFF
+# define LINE_COLOR 0x00D4D4D8
+# define BG_COLOR 0x0009090B
 
 typedef struct s_vars
 {
@@ -63,6 +65,7 @@ void			rotate_z_x(t_vars *vars, t_point *point);
 void			rotate_y_z(t_vars *vars, t_point *point);
 void			rotate_x_y(t_vars *vars, t_point *point);
 
+void			draw_background(t_vars *vars);
 int				init_win(t_vars *vars);
 void			destroy_win(t_mlx *mlx);
 int				destroy_handler(t_mlx *mlx);

@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:44:47 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/13 23:44:55 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 01:37:26 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 # include <stddef.h>
 
 # define BUFFER_SIZE 99999
+
 # define COLOR_MASK 4294967295U
-# define DEFAULT_COLOR 0x00FFFFFF
+# define LINE_COLOR 0x00D4D4D8
+# define BG_COLOR 0x0009090B
 
 typedef struct s_vars
 {
@@ -39,6 +41,8 @@ typedef struct s_vars
 	double			x_y_coef;
 	double			y_z_coef;
 	double			z_x_coef;
+
+	int				is_animating;
 }	t_vars;
 
 typedef struct s_point
@@ -63,10 +67,12 @@ void			rotate_z_x(t_vars *vars, t_point *point);
 void			rotate_y_z(t_vars *vars, t_point *point);
 void			rotate_x_y(t_vars *vars, t_point *point);
 
+void			draw_background(t_vars *vars);
 int				init_win(t_vars *vars);
 void			destroy_win(t_mlx *mlx);
 int				destroy_handler(t_mlx *mlx);
-int				key_handler(int keycode, t_mlx *mlx);
+int				keypress_handler(int keycode, t_vars *vars);
+int				animation_loop(t_vars *vars);
 
 void			free_str_arr(char **arr);
 void			free_ulong_arr(unsigned long **arr);
