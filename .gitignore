@@ -53,3 +53,6 @@ dkms.conf
 
 # Editor settings
 .vscode/
+
+# Directories
+build/
