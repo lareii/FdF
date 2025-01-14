@@ -1,0 +1,11 @@
+on: [push, pull_request]
+
+jobs:
+  norminette_job:
+    runs-on: ubuntu-latest
+    name: norminette
+    steps:
+    - uses: actions/checkout@v2
+    - uses: alexandregv/norminette-action@v3
+      with:
+        flags: 'src inc'
