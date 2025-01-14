@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:47:59 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/14 16:43:43 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:05:12 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ static int	set_img_props(t_mlx *mlx)
 		destroy_win(mlx);
 		return (-1);
 	}
-	mlx->banner_img_ptr = mlx_xpm_file_to_image(mlx->mlx_ptr, BANNER_FILEPATH, &img_width, &img_height);
+	mlx->banner_img_ptr = mlx_xpm_file_to_image(mlx->mlx_ptr,
+			BANNER_FILEPATH, &img_width, &img_height);
 	if (!mlx->banner_img_ptr)
 	{
 		destroy_win(mlx);

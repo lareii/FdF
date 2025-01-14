@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:48:18 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/14 16:14:46 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:05:34 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	animation_loop(t_vars *vars)
 		vars->z_x_coef += 0.01;
 		draw_background(vars);
 		render_map(vars);
-		mlx_put_image_to_window(vars->mlx->mlx_ptr, vars->mlx->win_ptr, vars->mlx->banner_img_ptr, 0, 0);
+		mlx_put_image_to_window(vars->mlx->mlx_ptr, vars->mlx->win_ptr,
+			vars->mlx->banner_img_ptr, 0, 0);
 		usleep(10000);
 	}
 	return (1);
@@ -96,6 +97,7 @@ int	keypress_handler(int keycode, t_vars *vars)
 		vars->is_animating = !vars->is_animating;
 	draw_background(vars);
 	render_map(vars);
-	mlx_put_image_to_window(vars->mlx->mlx_ptr, vars->mlx->win_ptr, vars->mlx->banner_img_ptr, 0, 0);
+	mlx_put_image_to_window(vars->mlx->mlx_ptr, vars->mlx->win_ptr,
+		vars->mlx->banner_img_ptr, 0, 0);
 	return (0);
 }
