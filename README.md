@@ -1,6 +1,6 @@
 <div align="center">
     <img src=".github/assets/fdfm.png" alt="fdf badge">
-    <h1>fdf</h1>
+    <h1>FdF</h1>
 </div>
 
 ![norminette](https://github.com/lareii/fdf/actions/workflows/norminette.yml/badge.svg)
