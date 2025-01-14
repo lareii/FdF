@@ -10,9 +10,6 @@
 ## About
 FdF is a foundational graphics project in the 42 curriculum that involves creating a program capable of rendering 3D wireframe models in a 2D environment. The project challenges students to use mathematical concepts such as isometric projections and implement fundamental graphics programming techniques, including managing the window display, handling user interactions, and drawing lines efficiently. By completing FdF, students gain a deeper understanding of computer graphics, coordinate transformations, and algorithm optimization.
 
-## Preview
-![fdf preview](.github/assets/fdf_preview.png)
-
 ### References
 - https://en.wikipedia.org/wiki/Rotation_matrix
 - https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)
@@ -43,6 +40,11 @@ Run the program with a map file as an argument:
 ./fdf maps/42.fdf
 ```
 Ta-da! 🥳 You should see a 3D wireframe projection of the map.
+
+## Preview
+![fdf preview](.github/assets/fdf_preview.png)
+
+Watch the [demo video](https://www.youtube.com/watch?v=_YHez1YKnVc) to see the program in action.
 
 ## Contributing
 Contributions are welcome! If you would like to contribute to this project, please open a pull request.
