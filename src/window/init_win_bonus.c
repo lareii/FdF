@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:47:59 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/14 01:37:30 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:43:43 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 static int	set_img_props(t_mlx *mlx)
 {
+	int	img_width;
+	int	img_height;
+
 	mlx->img_ptr = mlx_new_image(mlx->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
 	if (!mlx->img_ptr)
 	{
@@ -26,6 +29,12 @@ static int	set_img_props(t_mlx *mlx)
 	mlx->data_addr = mlx_get_data_addr(mlx->img_ptr, &mlx->bits_per_pixel,
 			&mlx->size_line, &mlx->endian);
 	if (!mlx->data_addr)
+	{
+		destroy_win(mlx);
+		return (-1);
+	}
+	mlx->banner_img_ptr = mlx_xpm_file_to_image(mlx->mlx_ptr, BANNER_FILEPATH, &img_width, &img_height);
+	if (!mlx->banner_img_ptr)
 	{
 		destroy_win(mlx);
 		return (-1);
@@ -59,6 +68,7 @@ int	init_win(t_vars *vars)
 	mlx.mlx_ptr = NULL;
 	mlx.win_ptr = NULL;
 	mlx.img_ptr = NULL;
+	mlx.banner_img_ptr = NULL;
 	if (set_win_props(vars->mlx) == -1)
 		return (-1);
 	if (set_img_props(vars->mlx) == -1)

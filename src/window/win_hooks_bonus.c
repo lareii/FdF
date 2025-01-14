@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:48:18 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/14 01:41:52 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:14:46 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	animation_loop(t_vars *vars)
 		vars->z_x_coef += 0.01;
 		draw_background(vars);
 		render_map(vars);
+		mlx_put_image_to_window(vars->mlx->mlx_ptr, vars->mlx->win_ptr, vars->mlx->banner_img_ptr, 0, 0);
 		usleep(10000);
 	}
 	return (1);
@@ -56,17 +57,17 @@ static void	transformation_keys(int keycode, t_vars *vars)
 		vars->map_y += 5;
 	else if (keycode == XK_Down)
 		vars->map_y -= 5;
-	else if (keycode == XK_n)
-		vars->zoom += 0.1;
-	else if (keycode == XK_m && vars->zoom > 0.2)
-		vars->zoom -= 0.1;
 }
 
 static void	projection_keys(int keycode, t_vars *vars)
 {
-	if (keycode == XK_z)
+	if (keycode == XK_n)
+		vars->zoom += 0.1;
+	else if (keycode == XK_m && vars->zoom > 0.2)
+		vars->zoom -= 0.1;
+	else if (keycode == XK_j)
 		vars->height -= 0.5;
-	else if (keycode == XK_x)
+	else if (keycode == XK_k)
 		vars->height += 0.5;
 	else if (keycode == XK_r)
 	{
@@ -95,5 +96,6 @@ int	keypress_handler(int keycode, t_vars *vars)
 		vars->is_animating = !vars->is_animating;
 	draw_background(vars);
 	render_map(vars);
+	mlx_put_image_to_window(vars->mlx->mlx_ptr, vars->mlx->win_ptr, vars->mlx->banner_img_ptr, 0, 0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:53:45 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/14 01:15:46 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 01:56:54 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	set_camera_props(t_vars *vars)
 	vars->x_y_coef = -0.4;
 	vars->y_z_coef = -0.9;
 	vars->z_x_coef = 0;
-	vars->map_x = 0;
-	vars->map_y = 0;
+	vars->map_x = 200;
+	vars->map_y = 50;
 	vars->is_animating = 0;
 }
 

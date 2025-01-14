@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:48:39 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/14 00:43:53 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:44:24 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	draw_background(t_vars *vars)
 
 void	destroy_win(t_mlx *mlx)
 {
+	if (mlx->banner_img_ptr)
+		mlx_destroy_image(mlx->mlx_ptr, mlx->banner_img_ptr);
 	if (mlx->img_ptr)
 		mlx_destroy_image(mlx->mlx_ptr, mlx->img_ptr);
 	if (mlx->win_ptr)

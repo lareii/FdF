@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 23:44:47 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/01/14 02:07:50 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:43:54 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # define COLOR_MASK 4294967295U
 # define LINE_COLOR 0x00D4D4D8
 # define BG_COLOR 0x0009090B
+
+# define BANNER_FILEPATH "./assets/banner.xpm"
 
 typedef struct s_vars
 {
