@@ -17,7 +17,6 @@ FdF is a foundational graphics project in the 42 curriculum that involves creati
 
 ## Install & Usage (Linux)
 ### Prerequisites
-- [MinilibX](https://github.com/42Paris/minilibx-linux)
 - MinilibX requires the following packages to be installed:
 ```bash
 sudo apt-get install xorg libxext-dev zlib1g-dev
@@ -37,7 +36,7 @@ make # 'make bonus' for bonus version
 ### Usage
 Run the program with a map file as an argument:
 ```bash
-./fdf maps/42.fdf
+./fdf maps/42.fdf # './fdf_bonus <map_file> for bonus version.
 ```
 Ta-da! 🥳 You should see a 3D wireframe projection of the map.
 
